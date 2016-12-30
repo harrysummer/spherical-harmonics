@@ -36,6 +36,7 @@
 #ifndef SH_SPHERICAL_HARMONICS_H_
 #define SH_SPHERICAL_HARMONICS_H_
 
+#include <vector>
 #include <array>
 #include <functional>
 #include <memory>
