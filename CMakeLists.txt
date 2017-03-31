@@ -24,6 +24,11 @@ add_executable (test_sh ${TEST_FILES})
 target_link_libraries (test_sh libsh gtest gtest_main)
 set_property (TARGET libsh PROPERTY PUBLIC_HEADER ${HDR_FILES})
 
+if (UNIX)
+    find_package (Threads)
+    target_link_libraries (libsh ${CMAKE_THREAD_LIBS_INIT})
+endif (UNIX)
+
 install (TARGETS libsh
 	EXPORT spherical_harmonics-targets
 	RUNTIME DESTINATION bin
